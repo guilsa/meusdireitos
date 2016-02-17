@@ -6,4 +6,4 @@
 
 * `bundle install`
 * `rackup`
-
+*  then go to your browser and open http://localhost:9292
