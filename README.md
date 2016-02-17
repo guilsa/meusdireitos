@@ -1,8 +1,5 @@
-# Dependencies
-
-* bundle install
-
 # Run locally
 
+* `bundle install`
 * `rackup`
 
