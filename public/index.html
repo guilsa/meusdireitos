@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>Meus Direitos</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -46,23 +46,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">MEUS DIREITOS</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">Como funciona</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">Do que posso reclamar?</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#portfolio">Quanto custa?</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Tira suas dúvidas</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Privacidade</a>
                     </li>
                 </ul>
             </div>
@@ -74,10 +77,11 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Nani te amo</h1>
+                <h1>A forma mais simples, rápida e eficaz de fazer uma reclamação contra uma empresa</h1>
                 <hr>
-                <p>Just testing this out first time is a charm.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Happy Valentines</a>
+                <h3>Envie uma reclamação ao PROCON-SP.</h3>
+
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Enviar Reclamação</a>
             </div>
         </div>
     </header>
@@ -138,111 +142,50 @@
         </div>
     </section>
 
+    <section class="bg-secondary" id="about">
+        <div class="container text-center">
+
+                <!-- <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Insira o valor da reclamação:</h2>
+                    <form class="contact-form row">
+                        <div class="col-md-4">
+                            <label></label>
+                            <input type="text" class="form-control" placeholder="valor da reclamacao">
+                        </div>
+                    </form>
+                    <p class="text-faded">Valor para prepararmos, revisarmos e enviarmos sua reclamação ao Procon-SP (15% do valor da reclamação):</p>
+                    <a href="#" class="btn btn-default btn-xl wow tada">Pagar e enviar reclamação</a>
+                </div> -->
+
+                <div class="call-to-action">
+                    <h2>Insira o valor da reclamação:</h2>
+                    <form class="contact-form row">
+                        <div class="col-md-12">
+                            <label></label>
+                            <input type="text" class="form-control" id="input-pagar" placeholder="valor da reclamacao">
+                            <!-- <div id="#alert_placeholder"></div> -->
+                            <div class="alert alert-danger fade in hidden" id="alert_placeholder">
+                              <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                              <strong>Atenção:</strong> Esse campo aceita somente números.
+                            </div>
+
+                        </div>
+                    </form>
+                    <p class="text-faded">Valor para prepararmos, revisarmos e enviarmos sua reclamação ao Procon-SP (15% do valor da reclamação):</p>
+                    <a class="btn btn-default btn-xl wow tada" id="btn-pagar">Pagar e enviar reclamação</a>
+                </div>
+
+        </div>
+    </section>
+
     <section class="no-padding" id="portfolio">
         <div class="container-fluid">
             <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
 
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
-            </div>
-        </div>
-    </aside>
+
 
     <section id="contact">
         <div class="container">
@@ -277,6 +220,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
+
+    <!-- Meus Direitos JavaScript -->
+    <script src="js/main.js"></script>
 
 </body>
 

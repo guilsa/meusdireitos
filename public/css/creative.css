@@ -3,7 +3,9 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-
+/*#alert_placeholder {
+  display: none;
+}*/
 html,
 body {
   height: 100%;
@@ -45,6 +47,9 @@ p {
 }
 .bg-primary {
   background-color: #f05f40;
+}
+.bg-secondary {
+  background-color: gray;
 }
 .bg-dark {
   background-color: #222222;
