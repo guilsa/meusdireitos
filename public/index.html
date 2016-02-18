@@ -32,6 +32,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Pagarme.JS -->
+    <script src="https://assets.pagar.me/js/pagarme.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -161,6 +164,8 @@
                     </form>
                     <p class="text-faded">Valor para prepararmos, revisarmos e enviarmos sua reclamação ao Procon-SP (15% do valor da reclamação):</p>
                     <a class="btn btn-default btn-xl wow tada" id="btn-pagar">Pagar e enviar reclamação</a>
+                    <!-- Trigger the modal with a button -->
+                    <a class="btn btn-default btn-xl wow tada" data-toggle="modal" data-target="#myModal">Pagar</a>
                 </div>
 
         </div>
@@ -194,6 +199,41 @@
             </div>
         </div>
     </section>
+
+        <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Pagarme</h4>
+          </div>
+          <div class="modal-body">
+            <form id="payment_form" action="https://seusite.com.br/transactions/new" method="POST">
+              Número do cartão: <input type="text" id="card_number"/>
+              <br/>
+              Nome (como escrito no cartão): <input type="text" id="card_holder_name"/>
+              <br/>
+              Mês de expiração: <input type="text" id="card_expiration_month"/>
+              <br/>
+              Ano de expiração: <input type="text" id="card_expiration_year"/>
+              <br/>
+              Código de segurança: <input type="text" id="card_cvv"/>
+              <br/>
+              <div id="field_errors">
+              </div>
+              <br/>
+              <input type="submit"></input>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
