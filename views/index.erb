@@ -163,9 +163,9 @@
                         </div>
                     </form>
                     <p class="text-faded">Valor para prepararmos, revisarmos e enviarmos sua reclamação ao Procon-SP (15% do valor da reclamação):</p>
-                    <a class="btn btn-default btn-xl wow tada" id="btn-pagar">Pagar e enviar reclamação</a>
+                    <a class="btn btn-default btn-xl wow tada" data-toggle="modal" data-target="#myModal" id="btn-pagar">Pagar e enviar reclamação</a>
                     <!-- Trigger the modal with a button -->
-                    <a class="btn btn-default btn-xl wow tada" data-toggle="modal" data-target="#myModal">Pagar</a>
+                    <!-- <a class="btn btn-default btn-xl wow tada" data-toggle="modal" data-target="#myModal">Pagar</a> -->
                 </div>
 
         </div>
@@ -207,7 +207,7 @@
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Pagarme</h4>
+            <h4 class="modal-title">Pagarme - <span id="modal_title_value"></span></h4>
           </div>
           <div class="modal-body">
             <!-- meusdireitos.herokuapp.com/transactions/new -->
