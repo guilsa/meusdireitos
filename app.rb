@@ -12,7 +12,6 @@ post '/transactions/new' do
   CARD_HASH = params["card_hash"]
   AMOUNT = params["amount"]
 
-  p ENV['PAGARME_SECRET']
   # PagarMe.api_key = ENV['PAGARME_SECRET']
   #
   # transaction = PagarMe::Transaction.new({
