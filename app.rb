@@ -12,15 +12,16 @@ post '/transactions/new' do
   CARD_HASH = params["card_hash"]
   AMOUNT = params["amount"]
 
-  PagarMe.api_key = ENV['PAGARME_SECRET']
-  
-  transaction = PagarMe::Transaction.new({
-      :amount => AMOUNT,
-      :card_hash => "{CARD_HASH}"
-  })
-
-  transaction.charge
-
-  status = transaction.status # status da transação
+  p ENV['PAGARME_SECRET']
+  # PagarMe.api_key = ENV['PAGARME_SECRET']
+  #
+  # transaction = PagarMe::Transaction.new({
+  #     :amount => AMOUNT,
+  #     :card_hash => "{CARD_HASH}"
+  # })
+  #
+  # transaction.charge
+  #
+  # status = transaction.status # status da transação
 
 end
