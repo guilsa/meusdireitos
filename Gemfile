@@ -1,9 +1,9 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-# gem 'rack'
 gem 'sinatra'
+gem 'pagarme'
 
-group :development, :test do
-   gem 'pry'
-end
+# group :development, :test do
+#    gem 'pry'
+# end

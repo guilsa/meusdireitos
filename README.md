@@ -1,9 +1,9 @@
 # Dependecies
 
-* Install Ruby
+* Install Ruby + Heroku toolbelt
 
 # Run locally
 
 * `bundle install`
-* `rackup`
-*  then go to your browser and open http://localhost:9292
+* `heroku local`
+*  then go to your browser and open http://localhost:PORT_NUMBER (look for the console log for port number)
