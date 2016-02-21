@@ -33,6 +33,3 @@ PLATFORMS
 DEPENDENCIES
   pagarme
   sinatra
-
-BUNDLED WITH
-   1.11.2
