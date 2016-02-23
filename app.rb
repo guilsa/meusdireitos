@@ -7,6 +7,10 @@ get '/' do
   erb :index
 end
 
+get '/payment_success.erb' do
+  erb :payment_success
+end
+
 post '/transactions/new' do
 
   CARD_HASH = params["card_hash"]

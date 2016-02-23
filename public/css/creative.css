@@ -404,3 +404,14 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+#input-pagar {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 18px;
+  width: 50%;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+}
