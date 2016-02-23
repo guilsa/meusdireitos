@@ -4,7 +4,9 @@ $( document ).ready(function() {
 
     var input = $("#input-pagar").val().replace("$", "").replace("R", "").replace(",", "")
     var form = $("#payment_form");
-    var amount = input * 0.15;
+    var amount_in_cents = parseInt(input * 0.15) * 100;
+    var amount = parseInt(input * 0.15);
+    // var amount = parseInt(input);
 
     if (input.match(/[^$,.\d]/)){
       $('#alert_placeholder').removeClass("hidden");
@@ -13,8 +15,11 @@ $( document ).ready(function() {
     }else{
       $('#alert_placeholder').addClass("hidden");
 
-      form.append($('<input type="hidden" name="amount">').val(amount));
+      form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
       $("#modal_title_value").append("valor: $" + amount);
+      // console.log("Normal amount: " + amount);
+      // console.log("Amount in cents: " + amount * 100);
+
     }
 
   });
