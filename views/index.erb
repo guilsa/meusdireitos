@@ -220,18 +220,44 @@
           <div class="modal-header">
             <h4 class="modal-title"></h4>
           </div>
-          <div class="modal-body">
+          <div class="modal-body creditly-wrapper">
             <!-- meusdireitos.herokuapp.com/transactions/new -->
+            <div class="alert alert-danger fade in hidden" id="cc_alert">
+              <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <span id="cc_alert_placeholder"></span>
+            </div>
+
             <form id="payment_form" action="/transactions/new" method="POST">
-              Número do cartão: <input type="text" id="card_number"/>
+            <!-- <form id="payment_form"> -->
+              <label>Número do cartão:</label>
+              <input class="credit-card-number form-control"
+              type="text" id="card_number" name="number" pattern="\d*"
+              inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
+              placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;"/>
               <br/>
-              Nome (como escrito no cartão): <input type="text" id="card_holder_name"/>
+              <label>Nome (como escrito no cartão):</label>
+              <input class="billing-address-name form-control"
+              id="card_holder_name" type="text" name="name"
+              placeholder="José Silva"/>
               <br/>
-              Mês de expiração: <input type="text" id="card_expiration_month"/>
+              <label>Expiração</label>
+              <input class="expiration-month-and-year form-control"
+                type="text" name="expiration-month-and-year"
+                placeholder="MM / AA"
+                id="card_expiration_month"/>
+              <!-- <label>Mês de expiração:</label>
+              <input type="text" id="card_expiration_month"/>
               <br/>
-              Ano de expiração: <input type="text" id="card_expiration_year"/>
-              <br/>
-              Código de segurança: <input type="text" id="card_cvv"/>
+              <label>Ano de expiração:</label>
+              <input type="text" id="card_expiration_year"/>
+              <br/> -->
+              <label>Código de segurança:</label>
+              <input type="text" id="card_cvv"
+                class="security-code form-control"·
+                inputmode="numeric"
+                pattern="\d*"
+                type="text" name="security-code"
+                placeholder="&#149;&#149;&#149;"/>
               <br/>
               <div id="field_errors">
               </div>
@@ -260,6 +286,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
+
+    <!-- credit card form validation -->
+    <script type="text/javascript" src="js/creditly.js"></script>
 
     <!-- Meus Direitos JavaScript -->
     <script src="js/main.js"></script>
