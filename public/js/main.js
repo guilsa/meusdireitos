@@ -2,18 +2,19 @@ $( document ).ready(function() {
 
   // Credit card error notification
   $("body").on("creditly_client_validation_error", function(e, data) {
+    var message = ""
     for (var i = 0; i < data.messages.length; i++) {
-      var message = data.messages[i];
-      $("#cc_alert_placeholder").append(message + "<br>");
+      message = message + data.messages[i] + "<br/>";
     }
+    $("#cc_alert_placeholder").html(message);
     $("#cc_alert").removeClass("hidden");
   });
 
   // Credit card validation & error messages
   var options = {
-    "security_code_message": "Your security code was really wrong!",
-    "expiration_message": "Check yo' expiration date yo!",
-    "number_message": "Invalid cc number."
+    "security_code_message": "Código de segurança inválido.",
+    "expiration_message": "Data de expiração inválida.",
+    "number_message": "Número do cartão inválido."
   };
   var creditly = Creditly.initialize(
     '.creditly-wrapper .expiration-month-and-year',
