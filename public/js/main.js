@@ -56,43 +56,40 @@ $( document ).ready(function() {
       event.preventDefault();
       var output = creditly.validate();
       if (output) {
-        // Do something with your credit card output.
-        console.log(output["number"]);
-        console.log(output["security_code"]);
-        console.log(output["expiration_month"]);
-        console.log(output["expiration_year"]);
-      }
+        // Complete payment.
 
+        var creditCard = new PagarMe.creditCard();
+        creditCard.cardHolderName = $("#payment_form #card_holder_name").val();
+        if (output["expiration_month"].toString().length == 1){
+          output["expiration_month"] = "0" + output["expiration_month"]
+        }
+        creditCard.cardExpirationMonth = output["expiration_month"];
+        creditCard.cardExpirationYear = output["expiration_year"];
+        creditCard.cardNumber = output["number"];
+        creditCard.cardCVV = output["security_code"];
 
+        // pega os erros de validação nos campos do form
+        var fieldErrors = creditCard.fieldErrors();
 
-      // var creditCard = new PagarMe.creditCard();
-      // creditCard.cardHolderName = $("#payment_form #card_holder_name").val();
-      // creditCard.cardExpirationMonth = $("#payment_form #card_expiration_month").val();
-      // creditCard.cardExpirationYear = $("#payment_form #card_expiration_year").val();
-      // creditCard.cardNumber = $("#payment_form #card_number").val();
-      // creditCard.cardCVV = $("#payment_form #card_cvv").val();
-      //
-      // // pega os erros de validação nos campos do form
-      // var fieldErrors = creditCard.fieldErrors();
-      //
-      // //Verifica se há erros
-      // var hasErrors = false;
-      // for(var field in fieldErrors) { hasErrors = true; break; }
-      //
-      // if(hasErrors) {
-      //     // realiza o tratamento de errors
-      //     alert(fieldErrors);
-      // } else {
-      //     // se não há erros, gera o card_hash...
-      //     creditCard.generateHash(function(cardHash) {
-      //         // ...coloca-o no form...
-      //         form.append($('<input type="hidden" name="card_hash">').val(cardHash));
-      //         // e envia o form
-      //         form.get(0).submit();
-      //     });
-      // }
-      //
-      // return false;
+        //Verifica se há erros
+        var hasErrors = false;
+        for(var field in fieldErrors) { hasErrors = true; break; }
+
+        if(hasErrors) {
+            // realiza o tratamento de errors
+            alert(fieldErrors);
+        } else {
+            // se não há erros, gera o card_hash...
+            creditCard.generateHash(function(cardHash) {
+                // ...coloca-o no form...
+                form.append($('<input type="hidden" name="card_hash">').val(cardHash));
+                // e envia o form
+                form.get(0).submit();
+            });
+        }
+
+        return false;
+    }
   });
 
 });
