@@ -415,3 +415,6 @@ body {
   box-shadow: none;
   border-radius: none;
 }
+.modal-title{
+  font-weight: bold;
+}
