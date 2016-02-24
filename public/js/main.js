@@ -16,7 +16,7 @@ $( document ).ready(function() {
       $('#alert_placeholder').addClass("hidden");
 
       form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
-      $(".modal-title").text("Valor: R$" + amount);
+      $(".modal-title").text("CARTÃO DE CRÉDITO: R$" + amount);
     }
 
   });
