@@ -1,5 +1,15 @@
 $( document ).ready(function() {
 
+  // Credit card error notification
+  $("body").on("creditly_client_validation_error", function(e, data) {
+    for (var i = 0; i < data.messages.length; i++) {
+      var message = data.messages[i];
+      $("#cc_alert_placeholder").append(message + "<br>");
+    }
+    $("#cc_alert").removeClass("hidden");
+  });
+
+  // Credit card validation & error messages
   var options = {
     "security_code_message": "Your security code was really wrong!",
     "expiration_message": "Check yo' expiration date yo!",
@@ -12,13 +22,13 @@ $( document ).ready(function() {
     '.creditly-wrapper .card-type',
     options);
 
+  // Purchase button's click event
   $( "#btn-pagar" ).click(function(e) {
 
     var input = $("#input-pagar").val().replace("$", "").replace("R", "").replace(",", "")
     var form = $("#payment_form");
     var amount_in_cents = parseInt(input * 0.15) * 100;
     var amount = parseInt(input * 0.15);
-    // var amount = parseInt(input);
 
     if (input.match(/[^$,.\d]/) || $("#input-pagar").val() == ""){
       $('#alert_placeholder').removeClass("hidden");
@@ -33,6 +43,7 @@ $( document ).ready(function() {
 
   });
 
+  // Pagar.me form capture via the Creditly helpers
   PagarMe.encryption_key = "ek_test_1iApOSxO2fc1yi1oIkFJSSZowB5pNu";
 
   var form = $("#payment_form");
@@ -40,10 +51,9 @@ $( document ).ready(function() {
   form.submit(function(event) { // quando o form for enviado...
       // inicializa um objeto de cartão de crédito e completa
       // com os dados do form
-      
+
       event.preventDefault();
       var output = creditly.validate();
-      debugger
       if (output) {
         // Do something with your credit card output.
         console.log(output["number"]);
@@ -51,13 +61,7 @@ $( document ).ready(function() {
         console.log(output["expiration_month"]);
         console.log(output["expiration_year"]);
       }
-      $("body").on("creditly_client_validation_error", function(e, data) {
-        for (var i = 0; i < data.messages.length; i++) {
-          var message = data.messages[i];
-          $("#cc_alert_placeholder").append(message + "<br>");
-          $("#cc_alert").removeClass("hidden");
-        }
-      });
+
 
 
       // var creditCard = new PagarMe.creditCard();
