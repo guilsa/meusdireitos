@@ -1,5 +1,7 @@
 require 'sinatra'
+require "sinatra/reloader" if development?
 require 'pagarme'
+require 'pry'
 
 ENV['RACK_ENV'] ||= 'development'
 
@@ -7,8 +9,13 @@ get '/' do
   erb :index
 end
 
-get '/payment_success.erb' do
-  erb :payment_success
+get '/sucesso' do
+  erb :success
+end
+
+get '/erro' do
+  @status = params["status"]
+  erb :unsuccess
 end
 
 post '/transactions/new' do
@@ -26,5 +33,11 @@ post '/transactions/new' do
   transaction.charge
 
   status = transaction.status # status da transação
+
+  if status == 'paid' then
+    redirect '/sucesso'
+  else
+    redirect to("/erro?status=#{status}")
+  end
 
 end
