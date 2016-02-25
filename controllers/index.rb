@@ -1,9 +1,4 @@
-require 'sinatra'
-require "sinatra/reloader" if development?
-require 'pagarme'
 # require 'pry'
-
-ENV['RACK_ENV'] ||= 'development'
 
 get '/' do
   erb :index
@@ -25,16 +20,14 @@ post '/transactions/new' do
 
   PagarMe.api_key = ENV['PAGARME_SECRET']
 
-  # transaction = PagarMe::Transaction.new({
-  #     :amount => AMOUNT,
-  #     :card_hash => CARD_HASH
-  # })
-  #
-  # transaction.charge
-  #
-  # status = transaction.status # status da transação
+  transaction = PagarMe::Transaction.new({
+      :amount => AMOUNT,
+      :card_hash => CARD_HASH
+  })
 
-  status="ultimoteste"
+  transaction.charge
+
+  status = transaction.status # status da transação
 
   if status == 'paid' then
     redirect '/sucesso'
