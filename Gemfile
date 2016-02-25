@@ -4,6 +4,7 @@ source "https://rubygems.org"
 gem 'sinatra'
 gem 'pagarme'
 
-# group :development, :test do
-#    gem 'pry'
-# end
+group :development, :test do
+   gem 'pry'
+   gem 'sinatra-contrib'
+end

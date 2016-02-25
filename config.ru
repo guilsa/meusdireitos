@@ -1,4 +1,4 @@
-require './new_transaction'
+require './app'
 run Sinatra::Application
 
 # use Rack::Static,

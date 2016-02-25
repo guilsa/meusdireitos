@@ -1,19 +1,28 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    backports (3.6.8)
+    coderay (1.1.1)
     domain_name (0.5.20160128)
       unf (>= 0.0.5, < 1.0.0)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
+    method_source (0.8.2)
     mime-types (2.99)
     multi_json (1.11.2)
     netrc (0.11.0)
     pagarme (2.0.2)
       multi_json
       rest-client
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    rack-test (0.6.3)
+      rack (>= 1.0)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -22,6 +31,14 @@ GEM
       rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    sinatra-contrib (1.4.6)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (>= 1.3, < 3)
+    slop (3.6.0)
     tilt (2.0.2)
     unf (0.1.4)
       unf_ext
@@ -32,4 +49,9 @@ PLATFORMS
 
 DEPENDENCIES
   pagarme
+  pry
   sinatra
+  sinatra-contrib
+
+BUNDLED WITH
+   1.11.2
