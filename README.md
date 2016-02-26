@@ -17,4 +17,4 @@
 
 # UX improvements
 
-* Payment flow: Ajaxify it so that everything (payment type, payment, success/error) happens in a single page inside a modal.
+* Payment flow: Ajaxify payment success/error messages so that they happen from a follow up modal.
