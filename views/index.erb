@@ -24,7 +24,7 @@
     <title>Meus Direitos</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -165,7 +165,7 @@
                     <form class="contact-form row">
                         <div class="col-md-12">
                             <label></label>
-                            <input type="text" class="form-control center" id="input-pagar" placeholder="Exemplo: R$1,500">
+                            <input type="number" class="form-control center" id="input-pagar" placeholder="Ex: 1500">
                             <!-- <div id="#alert_placeholder"></div> -->
                             <div class="alert alert-danger fade in hidden" id="alert_placeholder">
                               <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -175,9 +175,114 @@
                         </div>
                     </form>
                     <p class="text-faded">Valor para prepararmos, revisarmos e enviarmos sua reclamação ao Procon-SP (iremos cobrar 15% do valor da reclamação):</p>
-                    <a class="btn btn-default btn-xl wow tada" data-toggle="modal" data-target="#myModal" id="btn-pagar">Pagar e enviar reclamação</a>
+                    <a class="btn btn-default btn-xl wow tada" data-toggle="modal" data-target=".select-payment-modal" id="btn-pagar">Pagar e enviar reclamação</a>
                     <!-- Trigger the modal with a button -->
-                </div>
+
+                    <!-- Small modal -->
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".select-payment-modal">Small modal</button> -->
+
+                    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
+                    <!-- Select payment modal -->
+                    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <div class="modal fade select-payment-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                          <h3>Forma de pagamento</h3>
+                          <p>
+                            <form id="select-payment-form" action="/boletotransactions/new" method="POST">
+                            <!-- <form id="payment_form" action="/transactions/new" method="POST"> -->
+                              <div class="btn-group" data-toggle="buttons">
+                                  <label>
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Cartão de crédito
+                                  </label>
+                                  <label>
+                                    <input type="radio" name="options" id="option2" autocomplete="off"> Boleto
+                                  </label>
+
+                              </div>
+                            <br/>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".credit-card-modal">Próximo</button>
+                            </form>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- ~~~~~~~~~~~~~~~~~ -->
+                    <!-- Credit card modal -->
+                    <!-- ~~~~~~~~~~~~~~~~~ -->
+
+                    <div class="modal fade credit-card-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                       <div class="modal-dialog modal-sm">
+                         <div class="modal-header">
+                          <div class="modal-content">
+                             <h4 class="modal-title">Cartão de crédito</h4>
+                             <div class="modal-body creditly-wrapper">
+                                <div class="alert alert-danger fade in hidden" id="cc_alert">
+                                   <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                   <span id="cc_alert_placeholder"></span>
+                                </div>
+                                <form id="payment_form" action="/transactions/new" method="POST">
+                                   <label>Número do cartão:</label>
+                                   <input class="credit-card-number form-control"
+                                      type="text" id="card_number" name="number" pattern="\d*" inputmode="numeric"
+                                      autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
+                                      placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;"/>
+                                   <br/>
+                                   <label>Nome (como escrito no cartão):</label>
+                                   <input class="billing-address-name form-control" id="card_holder_name" type="text" name="name" placeholder="José Silva"/>
+                                   <br/>
+                                   <label>Expiração</label>
+                                   <input class="expiration-month-and-year form-control" type="text"
+                                      name="expiration-month-and-year" placeholder="MM / AA" id="card_expiration_month"/>
+                                  <br/>
+                                   <label>Código de segurança:</label>
+                                   <input type="text" id="card_cvv"
+                                      class="security-code form-control" inputmode="numeric" pattern="\d*"
+                                      type="text" name="security-code" placeholder="&#149;&#149;&#149;"/>
+                                   <br/>
+                                   <input type="submit" class="btn btn-primary" value="Finalizar Pagamento">
+                                </form>
+                             </div>
+                             <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".first-example-modal">Small modal</button> -->
+                          </div>
+                         </div>
+                         </div>
+                    </div>
+
+                    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
+                    <!-- Payment success modal -->
+                    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <!-- <div class="modal fade payment-success-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                          <h3>Third modal</h3>
+                          <p>
+                            Third modal
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".first-example-modal">Small modal</button>
+                          </p>
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <!-- ~~~~~~~~~~~~~~~~~~~ -->
+                    <!-- Payment error modal -->
+                    <!-- ~~~~~~~~~~~~~~~~~~~ -->
+
+                    <!-- <div class="modal fade payment-error-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                          <h3>Third modal</h3>
+                          <p>
+                            Third modal
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".first-example-modal">Small modal</button>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </div> -->
 
         </div>
     </section>
@@ -211,67 +316,7 @@
         </div>
     </section>
 
-        <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title"></h4>
-          </div>
-          <div class="modal-body creditly-wrapper">
-            <!-- meusdireitos.herokuapp.com/transactions/new -->
-            <div class="alert alert-danger fade in hidden" id="cc_alert">
-              <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <span id="cc_alert_placeholder"></span>
-            </div>
-
-            <form id="payment_form" action="/transactions/new" method="POST">
-            <!-- <form id="payment_form"> -->
-              <label>Número do cartão:</label>
-              <input class="credit-card-number form-control"
-              type="text" id="card_number" name="number" pattern="\d*"
-              inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
-              placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;"/>
-              <br/>
-              <label>Nome (como escrito no cartão):</label>
-              <input class="billing-address-name form-control"
-              id="card_holder_name" type="text" name="name"
-              placeholder="José Silva"/>
-              <br/>
-              <label>Expiração</label>
-              <input class="expiration-month-and-year form-control"
-                type="text" name="expiration-month-and-year"
-                placeholder="MM / AA"
-                id="card_expiration_month"/>
-              <!-- <label>Mês de expiração:</label>
-              <input type="text" id="card_expiration_month"/>
-              <br/>
-              <label>Ano de expiração:</label>
-              <input type="text" id="card_expiration_year"/>
-              <br/> -->
-              <label>Código de segurança:</label>
-              <input type="text" id="card_cvv"
-                class="security-code form-control"·
-                inputmode="numeric"
-                pattern="\d*"
-                type="text" name="security-code"
-                placeholder="&#149;&#149;&#149;"/>
-              <br/>
-              <div id="field_errors">
-              </div>
-              <br/>
-              <input type="submit"></input>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
+        <!-- Credit Card Modal -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

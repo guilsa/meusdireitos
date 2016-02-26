@@ -1,5 +1,25 @@
 $( document ).ready(function() {
 
+  // Send user to credit card modal OR submit the boleto
+  var credit_card = $("#select-payment-form #option1");
+  var boleto = $("#select-payment-form #option2");
+  credit_card.click(function(){
+    $("#select-payment-form button").attr({
+      type: "button",
+      class: "btn btn-primary",
+      "data-dismiss": "modal",
+      "data-toggle": "modal",
+      "data-target": ".credit-card-modal"
+    });
+  });
+  boleto.click(function(){
+    $("#select-payment-form button").removeAttr("data-dismiss", "data-toggle", "data-target");
+    $("#select-payment-form button").attr({
+      type: "submit",
+      class: "btn btn-primary"
+    });
+  });
+
   // Credit card error notification
   $("body").on("creditly_client_validation_error", function(e, data) {
     var message = ""
@@ -27,7 +47,8 @@ $( document ).ready(function() {
   $( "#btn-pagar" ).click(function(e) {
 
     var input = $("#input-pagar").val().replace("$", "").replace("R", "").replace(",", "")
-    var form = $("#payment_form");
+    var cc_form = $("#payment_form");
+    var boleto_form = $("#select-payment-form");
     var amount_in_cents = parseInt(input * 0.15) * 100;
     var amount = parseInt(input * 0.15);
 
@@ -37,9 +58,9 @@ $( document ).ready(function() {
       return false;
     }else{
       $('#alert_placeholder').addClass("hidden");
-
-      form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
-      $(".modal-title").text("CARTÃO DE CRÉDITO: R$" + amount);
+      cc_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
+      boleto_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
+      $(".modal-title").text("Cartão de Crédito: R$" + amount);
     }
 
   });
