@@ -13,7 +13,9 @@ $( document ).ready(function() {
     });
   });
   boleto.click(function(){
-    $("#select-payment-form button").removeAttr("data-dismiss", "data-toggle", "data-target");
+    $("#select-payment-form button").removeAttr("data-dismiss");
+    $("#select-payment-form button").removeAttr("data-toggle");
+    $("#select-payment-form button").removeAttr("data-target");
     $("#select-payment-form button").attr({
       type: "submit",
       class: "btn btn-primary"
