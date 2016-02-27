@@ -3,6 +3,7 @@ source "https://rubygems.org"
 
 gem 'sinatra'
 gem 'pagarme'
+gem 'sendgrid-ruby'
 
 group :development, :test do
    gem 'pry'

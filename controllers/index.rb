@@ -14,6 +14,26 @@ get '/erro' do
   erb :unsuccess
 end
 
+post '/contact' do
+  SENDGRID_APIKEY = ENV['SENDGRID_APIKEY']
+
+  name = params["name"]
+  email = params["email"]
+  subject = params["subject"]
+  message = params["message"]
+
+  client = SendGrid::Client.new(api_key: SENDGRID_APIKEY)
+
+  res = client.send(SendGrid::Mail.new(to: ['bpascowitch@gmail.com', 'guilsa001@gmail.com'],
+                                       from: email,
+                                       subject: subject,
+                                       text: message))
+  puts res.code
+  puts res.body
+
+  redirect to('/')
+end
+
 post '/boletotransactions/new' do
 
   BOLETO_AMOUNT = params["amount"]
