@@ -18,13 +18,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="A FORMA MAIS SIMPLES, RÁPIDA E EFICAZ DE FAZER UMA RECLAMAÇÃO CONTRA UMA EMPRESA" content="">
+
+    <meta property="og:url"                content="https://meusdireitos.herokuapp.com" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Envie uma reclamação ao PROCON-SP." />
+    <meta property="og:description"        content="Cancelamento de passagens aéreas, tarifas bancárias, produtos ou serviços com defeitos, cobranças em bares, restaurantes ou baladas, contas domésticas. Qualquer problema que você tiver perante um empresa pode ser reclamado." />
+    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
 
     <title>Meus Direitos</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -51,6 +59,16 @@
 
 <body id="page-top">
 
+  <!-- Facebook JavaScript SDK -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -74,13 +92,13 @@
                         <a class="page-scroll" href="#services">Do que posso reclamar?</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Quanto custa?</a>
+                        <a class="page-scroll" href="#custo">Quanto custa?</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Tira suas dúvidas</a>
+                        <a class="page-scroll" href="#duvidas">Tira suas dúvidas</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Privacidade</a>
+                        <a class="page-scroll" href="#privacidade">Privacidade</a>
                     </li>
                 </ul>
             </div>
@@ -104,58 +122,208 @@
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
+
+              <div class="col-lg-12 text-center">
+                  <h2 class="section-heading">COMO FUNCIONA</h2>
+                  <hr class="primary">
+              </div>
+
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-3 col-md-6 text-center">
+                          <div class="service-box">
+                              <!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
+                              <i class="fa fa-pencil fa-4x wow bounceIn"></i>
+                              <h3>Seu Problema</h3>
+                              <p>Descreva seu problema e envie os documentos de compra ou pedido.</p>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-6 text-center">
+                          <div class="service-box">
+                              <i class="fa fa-4x fa-paper-plane wow bounceIn" data-wow-delay=".1s"></i>
+                              <h3>Ajuda</h3>
+                              <p>Escrevemos, preparamos e revisamos sua reclamação.</p>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-6 text-center">
+                          <div class="service-box">
+                              <i class="fa fa-4x fa-credit-card wow bounceIn" data-wow-delay=".2s"></i>
+                              <h3>Baixo Custo</h3>
+                              <p>Pague 15% do valor correspondente para enviarmos sua reclamação.</p>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-6 text-center">
+                          <div class="service-box">
+                              <i class="fa fa-4x fa-heart wow bounceIn" data-wow-delay=".3s"></i>
+                              <h3>Atendimento Garantido</h3>
+                              <p>Receba atualizações sobre suas reclamações e tire suas dúvidas.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">We've got what you need!</h2>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+                    <p class="text-faded">A FORMA MAIS SIMPLES, RÁPIDA E EFICAZ DE FAZER UMA RECLAMAÇÃO CONTRA UMA EMPRESA. Descreva seu problema e envie os documentos de compra ou pedido. Escrevemos, preparamos e revisamos sua reclamação. Pague 15% do valor correspondente para enviarmos sua reclamação. Receba atualizações sobre suas reclamações e tire suas dúvidas.</p>
                     <a href="#services" class="page-scroll btn btn-default btn-xl">Get Started!</a>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                    <h2 class="section-heading">DO QUE POSSO RECLAMAR?</h2>
                     <hr class="primary">
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
-                    </div>
+              <div class="col-lg-8 col-sm-offset-2 text-center">
+                <h3 class="lead">
+                  Cancelamento de passagens aéreas, tarifas bancárias, produtos ou serviços com defeitos,
+                  cobranças em bares, restaurantes ou baladas, contas domésticas.
+                  Qualquer problema que você tiver perante um empresa pode ser reclamado.
+                </h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-center">
+                <p>
+                  Se tiver alguma dúvida antes de enviar sua reclamação, fale a com gente!
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-center">
+
+                  <a class="btn btn-default btn-xl wow tada page-scroll" href="#duvidas">Tirar dúvidas</a>
+
+                  </br>
+                  ou <a href="mailto:your-email@your-domain.com">contato@XXX.com.br</a>
+              </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="bg-primary" id="custo">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">QUANTO CUSTA?</h2>
+                    <hr class="primary">
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-sm-offset-2 text-center">
+                <i class="fa fa-4x fa-users wow bounceIn"></i>
+                <h2 class="lead">
+                  Só 15% do valor da reclamação.
+                </h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 col-sm-offset-2 text-center">
+                <h3 class="lead">
+                  Acreditamos que todas as pessoas podem fazer reclamações e ter seus direitos respeitados.
+                  Por isso, valorizamos a transparência e cobramos um único valor para você enviar sua reclamação:
+                  15% do valor da reclamação.</br></br>
+                  Reclamações ou manifestações posteriores não inclusas no valor.</br>
+                </h3>
+                <p>
+                  <a href="#" style="color: black">Ver Termos de Uso.</a>
+                </p>
+              </div>
+
+            <div class="row">
+              <div class="text-center">
+
+                  <a class="btn btn-default btn-xl wow tada page-scroll" href="#reclamacao">Enviar reclamação</a>
+
+              </div>
+            </div>
+
+        </div>
     </section>
+
+    <section id="duvidas">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">TIRE SUAS DÚVIDAS</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-sm-offset-2 text-center">
+                <i class="fa fa-5x fa-question wow tada"></i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 col-sm-offset-2 text-center">
+                <h3 class="lead">
+                  Para qualquer dúvida ou desabafo, fale com a gente!
+                </h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="text-center">
+
+                  <a class="btn btn-default btn-xl wow tada" data-toggle="modal" data-target=".contact-modal">Tirar dúvidas</a>
+                  </br>
+                  ou <a href="mailto:your-email@your-domain.com">contato@XXX.com.br</a>
+              </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-primary" id="privacidade">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="section-heading">PRIVACIDADE</h2>
+            <hr class="primary">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <i class="fa fa-lock fa-5x wow tada"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-sm-offset-3 text-center">
+            <h3 class="lead">
+              Cuidamos da sua privacidade e não compartilhamos suas informações com ninguém além do Procon-SP.
+            </h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <a href="#reclamacao" class="btn btn-default btn-xl page-scroll">Enviar Reclamação</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section class="bg-secondary" id="reclamacao">
         <div class="container text-center">
@@ -284,39 +452,92 @@
                     </div>
                 </div> -->
 
+                <!-- ~~~~~~~~~~~~~~~~~~~ -->
+                <!-- Contact modal -->
+                <!-- ~~~~~~~~~~~~~~~~~~~ -->
+                <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                    <div class="modal-dialog modal-lg">
+                      <div class="form-area">
+                         <form role="form">
+                            <br style="clear:both">
+                            <h3 style="margin-bottom: 25px; text-align: center;">Formulário de contato</h3>
+                            <div class="form-group">
+                               <input type="text" class="form-control" id="name" name="name" placeholder="Nome completo" required>
+                            </div>
+                            <div class="form-group">
+                               <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" required>
+                            </div>
+                            <div class="form-group">
+                               <input type="text" class="form-control" id="subject" name="subject" placeholder="Assunto" required>
+                            </div>
+                            <div class="form-group">
+                               <textarea class="form-control" type="textarea" id="message" placeholder="Dúvida" maxlength="1500" rows="7"></textarea>
+                               <span class="help-block">
+                                  <p id="characterLeft" class="help-block ">You have reached the limit</p>
+                               </span>
+                            </div>
+                            <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Enviar</button>
+                         </form>
+                      </div>
+                    </div>
+                </div>
+
         </div>
     </section>
-
-    <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter">
-            </div>
-        </div>
-    </section>
-
-
 
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <h2 class="section-heading">NEWSLETTER</h2>
                     <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    <p>Deixe seu e-mail para receber novidades sobre a gente e seus direitos!</p>
+                    <form class="">
+                      <input type="email" class="form-control center" id="input-email" placeholder="Endereço de e-mail">
+                    </br>
+                      <button type="button" class="btn btn-default">Cadastrar</button>
+                    </form>
                 </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>123-456-6789</p>
+                <div class="row">
+                  <div class="col-lg-6 col-lg-offset-3 text-center">
+                    <hr class="primary">
+                    <a href="#reclamacao" class="btn btn-primary btn-xl page-scroll">Enviar Reclamação</a></br></br>
+                    <p>No momento, fazemos reclamações junto ao Procon de São Paulo. Em breve, expandiremos para outros estados.</p>
+                  </div>
                 </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
-                </div>
+
             </div>
         </div>
     </section>
 
-        <!-- Credit Card Modal -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <p class="text-muted">
+              Meus Direitos</br>
+              <a href="mailto:your-email@your-domain.com">contato@XXX.com.br</a>
+            </p>
+
+          </div>
+          <div class="col-md-3 text-center">
+            <p class="text-muted">
+              Termos de Uso e Política de Privacidade
+            </p>
+          </div>
+          <div class="col-md-3 text-center">
+            <p class="text-muted">
+              Copyright Meus Direitos 2016 –
+              Todos os direitos reservados
+            </p>
+
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="fb-like" data-href="https://meusdireitos.herokuapp.com" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

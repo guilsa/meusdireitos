@@ -115,4 +115,22 @@ $( document ).ready(function() {
     }
   });
 
+  //
+  $('#characterLeft').text('1500 caracteres restantes');
+    $('#message').keydown(function () {
+        var max = 1500;
+        var len = $(this).val().length;
+        if (len >= max) {
+            $('#characterLeft').text('Você alcançou o seu limite.');
+            $('#characterLeft').addClass('red');
+            $('#btnSubmit').addClass('disabled');
+        }
+        else {
+            var ch = max - len;
+            $('#characterLeft').text(ch + ' caracteres restantes');
+            $('#btnSubmit').removeClass('disabled');
+            $('#characterLeft').removeClass('red');
+        }
+    });
+
 });
