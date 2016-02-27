@@ -3,7 +3,7 @@ require 'rubygems'
 require 'sinatra'
 require "sinatra/reloader" if development?
 require 'pagarme'
-require 'dotenv'
+require 'dotenv' if development?
 require 'sendgrid-ruby'
 Dotenv.load
 
