@@ -6,6 +6,7 @@
 
 * `bundle install`
 * `heroku git:remote -a meusdireitos` (need to be a collaborator on heroku for this)
+* `heroku config:get CONFIG-VAR-NAME -s  >> .env` (where CONFIG-VAR-NAME are environment vars from Heroku; this will copy Heroku's config vars to your local .env file)
 * `ruby init.rb -p 5000`
 *  open browser to http://localhost:5000
 
