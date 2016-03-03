@@ -10,12 +10,13 @@
 * `ruby init.rb -p 5000`
 *  open browser to http://localhost:5000
 
+# Run automated test
+
+* `rspec`
+
 # Missing edge cases
 
+* `col-sm` grid layout needs fixing.
 * Should we restrict to a claims worth at least $100? Because payment amount currently does not support cents. Ex: If user types 10, it'll return 1, not 1.50.
-* Some non-minimized .js and .css files have been referenced, need to recompile and reference.
+* JS optimization - some non-minimized .js and .css files have been referenced, need to recompile and reference.
 * On mobile payment success page the html background image doesn't cover 100% of the bg.
-
-# UX improvements
-
-* Payment flow: Ajaxify payment success/error messages so that they happen from a follow up modal.

@@ -1,9 +1,9 @@
 # Require the necessary libraries.
 require 'rubygems'
 require 'sinatra'
-require "sinatra/reloader" if development?
 require 'pagarme'
 if development? then
+  require "sinatra/reloader"
   require 'dotenv'
   Dotenv.load
 end
