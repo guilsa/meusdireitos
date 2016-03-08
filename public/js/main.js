@@ -113,7 +113,7 @@ $( document ).ready(function() {
     }
   });
 
-  //
+  
   $('#characterLeft').text('1500 caracteres restantes');
     $('#message').keydown(function () {
         var max = 1500;
