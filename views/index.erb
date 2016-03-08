@@ -324,167 +324,6 @@
       </div>
     </section>
 
-
-    <section class="bg-secondary" id="reclamacao">
-        <div class="container text-center">
-
-                <div class="call-to-action">
-                    <h2>Insira o valor da reclamação:</h2>
-                    <form class="contact-form row">
-                        <div class="col-md-12">
-                            <label></label>
-                            <input type="number" class="form-control center" id="input-pagar" placeholder="Ex: 1500">
-                            <!-- <div id="#alert_placeholder"></div> -->
-                            <div class="alert alert-danger fade in hidden" id="alert_placeholder">
-                              <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                              <strong>Atenção:</strong> Esse campo aceita somente números.
-                            </div>
-
-                        </div>
-                    </form>
-                    <p class="text-faded">Valor para prepararmos, revisarmos e enviarmos sua reclamação ao Procon-SP (iremos cobrar 15% do valor da reclamação):</p>
-                    <a class="btn btn-default btn-xl wow tada" data-toggle="modal" data-target=".select-payment-modal" id="btn-pagar">Pagar e enviar reclamação</a>
-                    <!-- Trigger the modal with a button -->
-
-                    <!-- Small modal -->
-                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".select-payment-modal">Small modal</button> -->
-
-                    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
-                    <!-- Select payment modal -->
-                    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
-
-                    <div class="modal fade select-payment-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                      <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                          <h3>Forma de pagamento</h3>
-                          <p>
-                            <form id="select-payment-form" action="/boletotransactions/new" method="POST">
-                            <!-- <form id="payment_form" action="/transactions/new" method="POST"> -->
-                              <div class="btn-group" data-toggle="buttons">
-                                  <label>
-                                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Cartão de crédito
-                                  </label>
-                                  <label>
-                                    <input type="radio" name="options" id="option2" autocomplete="off"> Boleto
-                                  </label>
-
-                              </div>
-                            <br/>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".credit-card-modal">Próximo</button>
-                            </form>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- ~~~~~~~~~~~~~~~~~ -->
-                    <!-- Credit card modal -->
-                    <!-- ~~~~~~~~~~~~~~~~~ -->
-
-                    <div class="modal fade credit-card-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                       <div class="modal-dialog modal-sm">
-                         <div class="modal-header">
-                          <div class="modal-content">
-                             <h4 class="modal-title">Cartão de crédito</h4>
-                             <div class="modal-body creditly-wrapper">
-                                <div class="alert alert-danger fade in hidden" id="cc_alert">
-                                   <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                   <span id="cc_alert_placeholder"></span>
-                                </div>
-                                <form id="payment_form" action="/transactions/new" method="POST">
-                                   <label>Número do cartão:</label>
-                                   <input class="credit-card-number form-control"
-                                      type="text" id="card_number" name="number" pattern="\d*" inputmode="numeric"
-                                      autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
-                                      placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;"/>
-                                   <br/>
-                                   <label>Nome (como escrito no cartão):</label>
-                                   <input class="billing-address-name form-control" id="card_holder_name" type="text" name="name" placeholder="José Silva"/>
-                                   <br/>
-                                   <label>Expiração</label>
-                                   <input class="expiration-month-and-year form-control" type="text"
-                                      name="expiration-month-and-year" placeholder="MM / AA" id="card_expiration_month"/>
-                                  <br/>
-                                   <label>Código de segurança:</label>
-                                   <input type="text" id="card_cvv"
-                                      class="security-code form-control" inputmode="numeric" pattern="\d*"
-                                      type="text" name="security-code" placeholder="&#149;&#149;&#149;"/>
-                                   <br/>
-                                   <input type="submit" class="btn btn-primary" value="Finalizar Pagamento">
-                                </form>
-                             </div>
-                             <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".first-example-modal">Small modal</button> -->
-                          </div>
-                         </div>
-                         </div>
-                    </div>
-
-                    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
-                    <!-- Payment success modal -->
-                    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
-
-                    <!-- <div class="modal fade payment-success-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                      <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                          <h3>Third modal</h3>
-                          <p>
-                            Third modal
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".first-example-modal">Small modal</button>
-                          </p>
-                        </div>
-                      </div>
-                    </div> -->
-
-                    <!-- ~~~~~~~~~~~~~~~~~~~ -->
-                    <!-- Payment error modal -->
-                    <!-- ~~~~~~~~~~~~~~~~~~~ -->
-
-                    <!-- <div class="modal fade payment-error-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                      <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                          <h3>Third modal</h3>
-                          <p>
-                            Third modal
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".first-example-modal">Small modal</button>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                </div> -->
-
-                <!-- ~~~~~~~~~~~~~~~~~~~ -->
-                <!-- Contact modal -->
-                <!-- ~~~~~~~~~~~~~~~~~~~ -->
-                <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                    <div class="modal-dialog modal-lg">
-                      <div class="form-area">
-                         <form role="form" action="/contact" method="POST">
-                            <br style="clear:both">
-                            <h3 style="margin-bottom: 25px; text-align: center;">Formulário de contato</h3>
-                            <div class="form-group">
-                               <input type="text" class="form-control" id="name" name="name" placeholder="Nome completo" required>
-                            </div>
-                            <div class="form-group">
-                               <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" required>
-                            </div>
-                            <div class="form-group">
-                               <input type="text" class="form-control" id="subject" name="subject" placeholder="Assunto" required>
-                            </div>
-                            <div class="form-group">
-                               <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Dúvida" maxlength="1500" rows="7"></textarea>
-                               <span class="help-block">
-                                  <p id="characterLeft" class="help-block ">You have reached the limit</p>
-                               </span>
-                            </div>
-                            <button type="submit" class="btn btn-primary pull-right">Enviar</button>
-                         </form>
-                      </div>
-                    </div>
-                </div>
-
-        </div>
-    </section>
-
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -505,20 +344,169 @@
                     <p>No momento, fazemos reclamações junto ao Procon de São Paulo. Em breve, expandiremos para outros estados.</p>
                   </div>
                 </div>
-
             </div>
-        </div>
     </section>
 
-    <footer class="footer">
-      <div class="container">
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <!-- Credit card modal -->
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <div class="modal fade payment-amount-modal text-center" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <h4 class="modal-title">Valor da reclamação</h4>
+            <div class="modal-body">
+              <h5>
+                Valor para prepararmos, revisarmos e enviarmos sua reclamação ao Procon-SP (iremos cobrar 15% do valor da reclamação):
+              </h5>
+              <form class="contact-form row">
+                <label></label>
+                <input class="form-control" type="text" pattern="\d*" id="input-pagar" placeholder="Ex: 1500" maxlength="5">
+                <div class="alert alert-danger fade in hidden" id="alert_placeholder">
+                  <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Problema:</strong> Esse valor é muito alto. Favor entre em contato conosco ou faça um pagamento abaixo de R$20.000.
+                </div>
+                <button type="button" id='btn-pagar' class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".select-payment-modal">Pagar</button>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Payment amount modal -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- <div class="modal fade payment-amount-modal text-center" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <h3>Insira o valor da reclamação:</h3>
+            <h5>
+              Valor para prepararmos, revisarmos e enviarmos sua reclamação ao Procon-SP (iremos cobrar 15% do valor da reclamação):
+            </h5>
+            <form class="contact-form row">
+              <label></label>
+              <input type="number" class="form-control center" id="input-pagar" placeholder="Ex: 1500">
+              <div class="alert alert-danger fade in hidden" id="alert_placeholder">
+                <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Atenção:</strong> Esse campo aceita somente números.
+              </div>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".select-payment-modal">Pagar</button>
+            </form>
+          </div>
+        </div>
+      </div> -->
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Select payment modal -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="modal fade select-payment-modal text-center" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <h3>Forma de pagamento</h3>
+          <p>
+          <form id="select-payment-form" action="/boletotransactions/new" method="POST">
+            <!-- <form id="payment_form" action="/transactions/new" method="POST"> -->
+            <div class="btn-group" data-toggle="buttons">
+              <label>
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> Cartão de crédito
+              </label>
+              <label>
+              <input type="radio" name="options" id="option2" autocomplete="off"> Boleto
+              </label>
+            </div>
+            <br/>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".credit-card-modal">Próximo</button>
+          </form>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <!-- Credit card modal -->
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <div class="modal fade credit-card-modal text-center" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <h4 class="modal-title">Cartão de crédito</h4>
+          <div class="modal-body creditly-wrapper">
+            <div class="alert alert-danger fade in hidden" id="cc_alert">
+              <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <span id="cc_alert_placeholder"></span>
+            </div>
+            <form id="payment_form" action="/transactions/new" method="POST">
+              <label>Número do cartão:</label>
+              <input class="credit-card-number form-control"
+                type="text" id="card_number" name="number" pattern="\d*" inputmode="numeric"
+                autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
+                placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;"/>
+              <br/>
+              <label>Nome (como escrito no cartão):</label>
+              <input class="billing-address-name form-control" id="card_holder_name" type="text" name="name" placeholder="José Silva"/>
+              <br/>
+              <label>Expiração</label>
+              <input class="expiration-month-and-year form-control" type="text"
+                name="expiration-month-and-year" placeholder="MM / AA" id="card_expiration_month"/>
+              <br/>
+              <label>Código de segurança:</label>
+              <input type="text" id="card_cvv"
+                class="security-code form-control" inputmode="numeric" pattern="\d*"
+                type="text" name="security-code" placeholder="&#149;&#149;&#149;"/>
+              <br/>
+              <input type="submit" class="btn btn-primary" value="Finalizar Pagamento">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Payment success modal -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <!-- ~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Payment error modal -->
+    <!-- ~~~~~~~~~~~~~~~~~~~ -->
+
+    <!-- ~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Contact modal -->
+    <!-- ~~~~~~~~~~~~~~~~~~~ -->
+    <div class="modal fade contact-modal text-center" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="form-area">
+          <form role="form" action="/contact" method="POST">
+            <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;">Formulário de contato</h3>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Nome completo" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="subject" name="subject" placeholder="Assunto" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Dúvida" maxlength="1500" rows="7"></textarea>
+              <span class="help-block">
+                <p id="characterLeft" class="help-block ">You have reached the limit</p>
+              </span>
+            </div>
+            <button type="submit" class="btn btn-primary pull-right">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="navbar-default clear-top">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-md-3 text-center">
             <p class="text-muted">
               Meus Direitos</br>
               <a href="mailto:your-email@your-domain.com">contato@XXX.com.br</a>
             </p>
-
           </div>
           <div class="col-md-3 text-center">
             <p class="text-muted">
@@ -530,7 +518,6 @@
               Copyright Meus Direitos 2016 –
               Todos os direitos reservados
             </p>
-
           </div>
           <div class="col-md-3 text-center">
             <div class="fb-like" data-href="https://meusdireitos.herokuapp.com" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
@@ -538,6 +525,7 @@
         </div>
       </div>
     </footer>
+
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

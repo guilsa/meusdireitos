@@ -1,5 +1,10 @@
 $( document ).ready(function() {
 
+  var url = window.location.href;
+  if ( url.indexOf('?pagamento') != -1 ) {
+    $('.payment-amount-modal').modal('show');
+  }
+
   // Send user to credit card modal OR submit the boleto
   var credit_card = $("#select-payment-form #option1");
   var boleto = $("#select-payment-form #option2");
@@ -48,22 +53,15 @@ $( document ).ready(function() {
   // Purchase button's click event
   $( "#btn-pagar" ).click(function(e) {
 
-    var input = $("#input-pagar").val().replace("$", "").replace("R", "").replace(",", "")
+    var input = parseInt($("#input-pagar").val());
     var cc_form = $("#payment_form");
     var boleto_form = $("#select-payment-form");
-    var amount_in_cents = parseInt(input * 0.15) * 100;
-    var amount = parseInt(input * 0.15);
+    var amount_in_cents = input * 0.15 * 100;
+    var amount = (input * 0.15).toFixed(2);
 
-    if (input.match(/[^$,.\d]/) || $("#input-pagar").val() == ""){
-      $('#alert_placeholder').removeClass("hidden");
-      e.preventDefault();
-      return false;
-    }else{
-      $('#alert_placeholder').addClass("hidden");
-      cc_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
-      boleto_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
-      $(".modal-title").text("Cartão de Crédito: R$" + amount);
-    }
+    cc_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
+    boleto_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
+    $(".modal-title").text("Cartão de Crédito: R$" + amount);
 
   });
 

@@ -1,5 +1,9 @@
 # require 'pry'
 
+get '/pagamento' do
+  redirect to("/?pagamento")
+end
+
 get '/' do
   erb :index
 end
@@ -77,7 +81,7 @@ post '/transactions/new' do
   status = transaction.status # status da transação
 
   if status == 'paid' then
-    redirect '/sucesso'
+    redirect to("/sucesso?status=#{status}")
   else
     redirect to("/erro?status=#{status}")
   end
