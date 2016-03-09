@@ -2,19 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Rollbar error tracking -->
-    <script>
-    var _rollbarConfig = {
-      accessToken: "e05aed8bf68a439db8671aa25a3a34cd",
-      captureUncaught: true,
-      payload: {
-          environment: "test"
-      }
-    };
-
-    !function(r){function o(e){if(t[e])return t[e].exports;var n=t[e]={exports:{},id:e,loaded:!1};return r[e].call(n.exports,n,n.exports,o),n.loaded=!0,n.exports}var t={};return o.m=r,o.c=t,o.p="",o(0)}([function(r,o,t){"use strict";var e=t(1).Rollbar,n=t(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.8/rollbar.min.js";var a=e.init(window,_rollbarConfig),i=n(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r,o){"use strict";function t(r){return function(){try{return r.apply(this,arguments)}catch(o){try{console.error("[Rollbar]: Internal error",o)}catch(t){}}}}function e(r,o,t){window._rollbarWrappedError&&(t[4]||(t[4]=window._rollbarWrappedError),t[5]||(t[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,t),o&&o.apply(window,t)}function n(r){var o=function(){var o=Array.prototype.slice.call(arguments,0);e(r,r._rollbarOldOnError,o)};return o.belongsToShim=!0,o}function a(r){this.shimId=++s,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function i(r){var o=a;return t(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var t=this,e="scope"===r;e&&(t=new o(this));var n=Array.prototype.slice.call(arguments,0),a={shim:t,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),e?t:void 0})}function l(r,o){if(o.hasOwnProperty&&o.hasOwnProperty("addEventListener")){var t=o.addEventListener;o.addEventListener=function(o,e,n){t.call(this,o,r.wrap(e),n)};var e=o.removeEventListener;o.removeEventListener=function(r,o,t){e.call(this,r,o&&o._wrapped?o._wrapped:o,t)}}}var s=0;a.init=function(r,o){var e=o.globalAlias||"Rollbar";if("object"==typeof r[e])return r[e];r._rollbarShimQueue=[],r._rollbarWrappedError=null,o=o||{};var i=new a;return t(function(){if(i.configure(o),o.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=n(i);var t,a,s="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<s.length;++t)a=s[t],r[a]&&r[a].prototype&&l(i,r[a].prototype)}return r[e]=i,i})()},a.prototype.loadFull=function(r,o,e,n,a){var i=function(){var o;if(void 0===r._rollbarPayloadQueue){var t,e,n,i;for(o=new Error("rollbar.js did not load");t=r._rollbarShimQueue.shift();)for(n=t.args,i=0;i<n.length;++i)if(e=n[i],"function"==typeof e){e(o);break}}"function"==typeof a&&a(o)},l=!1,s=o.createElement("script"),u=o.getElementsByTagName("script")[0],p=u.parentNode;s.crossOrigin="",s.src=n.rollbarJsUrl,s.async=!e,s.onload=s.onreadystatechange=t(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{p.removeChild(s)}catch(r){}l=!0,i()}}),p.insertBefore(s,u)},a.prototype.wrap=function(r,o){try{var t;if(t="function"==typeof o?o:function(){return o||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(o){throw o._rollbarContext=t()||{},o._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=o,o}},r._wrapped._isWrap=!0;for(var e in r)r.hasOwnProperty(e)&&(r._wrapped[e]=r[e])}return r._wrapped}catch(n){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError".split(","),p=0;p<u.length;++p)a.prototype[u[p]]=i(u[p]);r.exports={Rollbar:a,_rollbarWindowOnError:e}},function(r,o){"use strict";r.exports=function(r,o){return function(t){if(!t&&!window._rollbarInitialized){var e=window.RollbarNotifier,n=o||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,e.processPayloads()}}}}]);
-    </script>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,13 +76,13 @@
                         <a class="page-scroll" href="#about">Como funciona</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Do que posso reclamar?</a>
+                        <a class="page-scroll" href="#reclamar">Do que posso reclamar?</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#custo">Quanto custa?</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#duvidas">Tira suas dúvidas</a>
+                        <a class="page-scroll" href="#duvidas">Tirar dúvidas</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#privacidade">Privacidade</a>
@@ -110,11 +97,18 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>A forma mais simples, rápida e eficaz de fazer uma reclamação contra uma empresa</h1>
+                <h1>Fazemos reclamações contra empresas para você!</h1>
                 <hr>
                 <h3>Envie uma reclamação ao PROCON-SP.</h3>
 
                 <a href="#reclamacao" class="btn btn-primary btn-xl page-scroll">Enviar Reclamação</a>
+                <br/>
+                <br/>
+                <div class="row">
+                  <div class="center-block col-md-5" style="float: none;">
+                      <h5>No momento, fazemos reclamações junto ao Procon de São Paulo. Em breve, expandiremos para outros estados.</h5>
+                  </div>
+                </div>
             </div>
         </div>
     </header>
@@ -134,28 +128,28 @@
                           <div class="service-box">
                               <!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
                               <i class="fa fa-pencil fa-4x wow bounceIn"></i>
-                              <h3>Seu Problema</h3>
+                              <br/><br/>
                               <p>Descreva seu problema e envie os documentos de compra ou pedido.</p>
                           </div>
                       </div>
                       <div class="col-lg-3 col-md-6 text-center">
                           <div class="service-box">
                               <i class="fa fa-4x fa-paper-plane wow bounceIn" data-wow-delay=".1s"></i>
-                              <h3>Ajuda</h3>
+                              <br/><br/>
                               <p>Escrevemos, preparamos e revisamos sua reclamação.</p>
                           </div>
                       </div>
                       <div class="col-lg-3 col-md-6 text-center">
                           <div class="service-box">
                               <i class="fa fa-4x fa-credit-card wow bounceIn" data-wow-delay=".2s"></i>
-                              <h3>Baixo Custo</h3>
+                              <br/><br/>
                               <p>Pague 15% do valor correspondente para enviarmos sua reclamação.</p>
                           </div>
                       </div>
                       <div class="col-lg-3 col-md-6 text-center">
                           <div class="service-box">
                               <i class="fa fa-4x fa-heart wow bounceIn" data-wow-delay=".3s"></i>
-                              <h3>Atendimento Garantido</h3>
+                              <br/><br/>
                               <p>Receba atualizações sobre suas reclamações e tire suas dúvidas.</p>
                           </div>
                       </div>
@@ -166,20 +160,7 @@
         </div>
     </section>
 
-    <!-- <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
-                    <hr class="light">
-                    <p class="text-faded">A FORMA MAIS SIMPLES, RÁPIDA E EFICAZ DE FAZER UMA RECLAMAÇÃO CONTRA UMA EMPRESA. Descreva seu problema e envie os documentos de compra ou pedido. Escrevemos, preparamos e revisamos sua reclamação. Pague 15% do valor correspondente para enviarmos sua reclamação. Receba atualizações sobre suas reclamações e tire suas dúvidas.</p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl">Get Started!</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section id="services">
+    <section id="reclamar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -193,7 +174,7 @@
               <div class="col-lg-8 col-sm-offset-2 text-center">
                 <h3 class="lead">
                   Cancelamento de passagens aéreas, tarifas bancárias, produtos ou serviços com defeitos,
-                  cobranças em bares, restaurantes ou baladas, contas domésticas.
+                  cobranças em bares, restaurantes ou baladas, contas domésticas...
                   Qualquer problema que você tiver perante um empresa pode ser reclamado.
                 </h3>
               </div>
@@ -208,7 +189,7 @@
             <div class="row">
               <div class="text-center">
 
-                  <a class="btn btn-default btn-xl wow tada page-scroll" href="#duvidas">Tirar dúvidas</a>
+                  <a class="btn btn-primary btn-xl wow tada page-scroll" href="#duvidas">Tirar dúvidas</a>
 
                   </br>
                   ou <a href="mailto:your-email@your-domain.com">contato@XXX.com.br</a>
@@ -242,9 +223,9 @@
                 <h3 class="lead">
                   Acreditamos que todas as pessoas podem fazer reclamações e ter seus direitos respeitados.
                   Por isso, valorizamos a transparência e cobramos um único valor para você enviar sua reclamação:
-                  15% do valor da reclamação.</br></br>
-                  Reclamações ou manifestações posteriores não inclusas no valor.</br>
+                  15% do valor da reclamação.</br>
                 </h3>
+                <h5>Reclamações ou manifestações possuem valores adicionais.</h5></br>
                 <p>
                   <a href="#" style="color: black">Ver Termos de Uso.</a>
                 </p>
@@ -318,13 +299,33 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-            <a href="#reclamacao" class="btn btn-default btn-xl page-scroll">Enviar Reclamação</a>
+            <a href="#reclamacao" class="btn btn-default btn-xl page-scroll wow tada">Enviar Reclamação</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="reclamacao">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Insira seu nome e endereço de e-mail para
+                      entrarmos em contato solicitando todas as informações para sua reclamação.</h2>
+                    <!-- <h2 class="section-heading">INSIRA SEU NOME E ENDEREÇO DE E-MAIL PARA
+                      ENTRARMOS EM CONTATO SOLICITANDO TODAS AS INFORMAÇÃOES PARA SUA RECLAMAÇÃO</h2> -->
+                    <hr class="primary">
+                    <form class="">
+                      <input type="name" class="form-control center" id="input-name-reclamacao" placeholder="Nome completo">
+                    </br>
+                      <input type="email" class="form-control center" id="input-email-reclamacao" placeholder="Endereço de e-mail">
+                    </br>
+                      <button type="button" class="btn btn-primary wow tada">Enviar</button>
+                    </form>
+                </div>
+            </div>
+    </section>
+
+    <section class="bg-primary" id="newsletter">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -334,8 +335,15 @@
                     <form class="">
                       <input type="email" class="form-control center" id="input-email" placeholder="Endereço de e-mail">
                     </br>
-                      <button type="button" class="btn btn-primary">Cadastrar</button>
+                      <button type="button" class="btn btn-default wow tada">Cadastrar</button>
                     </form>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                      <div class="center-block col-md-6" style="float: none;">
+                          <h5>No momento, fazemos reclamações junto ao Procon de São Paulo. Em breve, expandiremos para outros estados.</h5>
+                      </div>
+                    </div>
                 </div>
                 <!-- <p>No momento, fazemos reclamações junto ao Procon de São Paulo. Em breve, expandiremos para outros estados.</p> -->
             </div>
@@ -497,18 +505,18 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3 text-center">
-            <p class="text-muted">
+            <p class="text-muted small">
               Meus Direitos</br>
               <a href="mailto:your-email@your-domain.com">contato@XXX.com.br</a>
             </p>
           </div>
           <div class="col-md-3 text-center">
-            <p class="text-muted">
+            <p class="text-muted small">
               Termos de Uso e Política de Privacidade
             </p>
           </div>
           <div class="col-md-3 text-center">
-            <p class="text-muted">
+            <p class="text-muted small">
               Copyright Meus Direitos 2016 –
               Todos os direitos reservados
             </p>
