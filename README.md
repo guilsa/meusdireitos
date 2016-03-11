@@ -7,12 +7,13 @@
 * `bundle install`
 * `heroku git:remote -a meusdireitos` (need to be a collaborator on Heroku for this)
 
-To import all environment variables from Heroku:
+To import all environment variables from Heroku (copy Heroku's config vars to a local .env file):
 
 * `heroku config:get PAGARME_SECRET -s  >> .env`
 * `heroku config:get SENDGRID_APIKEY -s  >> .env`
 * `heroku config:get TRELLO -s  >> .env`
-(this will copy Heroku's config vars to your local .env file)
+
+Start server:
 
 * `ruby init.rb -p 5000`
 *  open browser to http://localhost:5000
