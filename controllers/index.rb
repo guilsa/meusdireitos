@@ -18,6 +18,24 @@ get '/erro' do
   erb :unsuccess
 end
 
+post '/reclamacao' do
+
+  name = params["name"]
+  email = params["email"]
+
+  t = Time.now
+
+  Trello.configure do |trello|
+    trello.developer_public_key = ENV['TRELLO_CONSUMER_KEY']
+    trello.member_token = ENV['TRELLO_CONSUMER_SECRET']
+  end
+
+  Trello::Card.create(name: "#{name} (#{t.strftime('%v')}) - #{email}", list_id: '56e26982c47dc355306f9f9d')
+
+  erb :reclamacao_confirmation
+
+end
+
 post '/contact' do
   SENDGRID_APIKEY = ENV['SENDGRID_APIKEY']
 
@@ -28,14 +46,12 @@ post '/contact' do
 
   client = SendGrid::Client.new(api_key: SENDGRID_APIKEY)
 
-  res = client.send(SendGrid::Mail.new(to: ['bpascowitch@gmail.com', 'guilsa001@gmail.com'],
+  res = client.send(SendGrid::Mail.new(to: ['guilsa001@gmail.com', 'bpascowitch@gmail.com'],
                                        from: email,
                                        subject: subject,
                                        text: message))
-  puts res.code
-  puts res.body
 
-  redirect to('/')
+  erb :duvida_confirmation
 end
 
 post '/boletotransactions/new' do
