@@ -11,7 +11,8 @@ To import all environment variables from Heroku (copy Heroku's config vars to a 
 
 * `heroku config:get PAGARME_SECRET -s  >> .env`
 * `heroku config:get SENDGRID_APIKEY -s  >> .env`
-* `heroku config:get TRELLO -s  >> .env`
+* `heroku config:get TRELLO_CONSUMER_KEY -s  >> .env`
+* `heroku config:get TRELLO_CONSUMER_SECRET -s  >> .env`
 
 Start server:
 

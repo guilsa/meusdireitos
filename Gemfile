@@ -4,6 +4,7 @@ source "https://rubygems.org"
 gem 'sinatra'
 gem 'pagarme'
 gem 'sendgrid-ruby'
+gem 'ruby-trello'
 
 group :development, :test do
    gem 'pry'

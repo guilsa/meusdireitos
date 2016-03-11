@@ -2,12 +2,14 @@
 require 'rubygems'
 require 'sinatra'
 require 'pagarme'
+require 'trello'
+require 'sendgrid-ruby'
+
 if development? then
   require "sinatra/reloader"
   require 'dotenv'
   Dotenv.load
 end
-require 'sendgrid-ruby'
 
 # add controllers and views
 configure do
