@@ -113,6 +113,9 @@
         </div>
     </header>
 
+    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Como Funciona section -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
@@ -160,6 +163,9 @@
         </div>
     </section>
 
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <!-- Reclamar section  -->
+    <!-- ~~~~~~~~~~~~~~~~~ -->
     <section id="reclamar">
         <div class="container">
             <div class="row">
@@ -200,6 +206,9 @@
     </section>
 
 
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <!--   Custo section   -->
+    <!-- ~~~~~~~~~~~~~~~~~ -->
     <section class="bg-primary" id="custo">
         <div class="container">
             <div class="row">
@@ -242,6 +251,9 @@
         </div>
     </section>
 
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <!--  Dúvidas section  -->
+    <!-- ~~~~~~~~~~~~~~~~~ -->
     <section id="duvidas">
         <div class="container">
             <div class="row">
@@ -277,6 +289,9 @@
         </div>
     </section>
 
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <!--Privacidade Section-->
+    <!-- ~~~~~~~~~~~~~~~~~ -->
     <section class="bg-primary" id="privacidade">
       <div class="container">
         <div class="row">
@@ -305,6 +320,9 @@
       </div>
     </section>
 
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <!--Reclamação Section --->
+    <!-- ~~~~~~~~~~~~~~~~~ -->
     <section id="reclamacao">
         <div class="container">
             <div class="row">
@@ -314,23 +332,28 @@
                     <h2 class="section-heading">INSIRA SEU NOME E ENDEREÇO DE E-MAIL PARA
                       ENTRARMOS EM CONTATO SOLICITANDO TODAS AS INFORMAÇÃOES PARA SUA RECLAMAÇÃO</h2>
                     <hr class="primary">
-                    <form class="">
-                      <input type="name" class="form-control center" id="input-name-reclamacao" placeholder="Nome completo">
+                    <form class="reclamacao-form" action="/reclamacao" method="POST">
+                      <input type="text" class="form-control center" id="input-name-reclamacao" name="name" placeholder="Nome completo" required>
                     </br>
-                      <input type="email" class="form-control center" id="input-email-reclamacao" placeholder="Endereço de e-mail">
+                      <input type="email" class="form-control center" id="input-email-reclamacao" name="email" placeholder="Endereço de e-mail"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
                     </br>
-                      <button type="button" class="btn btn-primary wow tada">Enviar</button>
+                      <button type="submit" class="btn btn-primary btn-xl wow tada" data-dismiss="modal" data-toggle="modal">Enviar</button>
+                      <!-- data-target=".reclamacao-thank-you-modal" -->
                     </form>
                     <br><br>
                     <div class="row">
                       <p class="col-xs-8 col-xs-offset-2 well well-custom">
-                        Ao enviar e solicitar que entremos em contato, você concorda com os Termos de Uso e Política de Privacidade do Meus Direitos.
+                        Ao enviar e solicitar que entremos em contato, você concorda com os <a>Termos de Uso e Política de Privacidade</a> do Meus Direitos.
                       </p>
                     </div>
                 </div>
             </div>
     </section>
 
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <!--     NEWSLETTER    -->
+    <!-- ~~~~~~~~~~~~~~~~~ -->
     <section class="bg-primary" id="newsletter">
         <div class="container">
             <div class="row">
@@ -356,8 +379,12 @@
     </section>
 
     <!-- ~~~~~~~~~~~~~~~~~ -->
-    <!-- Credit card modal -->
+    <!--      MODALS       -->
     <!-- ~~~~~~~~~~~~~~~~~ -->
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Pagamento amount modal -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="modal fade payment-amount-modal text-center" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-md">
           <div class="modal-content">
@@ -403,6 +430,7 @@
         </div>
       </div> -->
 
+
     <!-- ~~~~~~~~~~~~~~~~~~~~ -->
     <!-- Select payment modal -->
     <!-- ~~~~~~~~~~~~~~~~~~~~ -->
@@ -415,10 +443,10 @@
             <!-- <form id="payment_form" action="/transactions/new" method="POST"> -->
             <div class="btn-group" data-toggle="buttons">
               <label>
-              <input type="radio" name="options" id="option1" autocomplete="off" checked> Cartão de crédito
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Cartão de crédito
               </label>
               <label>
-              <input type="radio" name="options" id="option2" autocomplete="off"> Boleto
+                <input type="radio" name="options" id="option2" autocomplete="off"> Boleto
               </label>
             </div>
             <br/>
@@ -467,15 +495,6 @@
       </div>
     </div>
 
-
-    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
-    <!-- Payment success modal -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~ -->
-
-    <!-- ~~~~~~~~~~~~~~~~~~~ -->
-    <!-- Payment error modal -->
-    <!-- ~~~~~~~~~~~~~~~~~~~ -->
-
     <!-- ~~~~~~~~~~~~~~~~~~~ -->
     <!-- Contact modal -->
     <!-- ~~~~~~~~~~~~~~~~~~~ -->
@@ -506,6 +525,9 @@
       </div>
     </div>
 
+    <!-- ~~~~~~~~~~~~~~~~~ -->
+    <!--  END OF MODALS    -->
+    <!-- ~~~~~~~~~~~~~~~~~ -->
 
     <footer class="navbar-default clear-top">
       <div class="container-fluid">
