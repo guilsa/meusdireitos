@@ -50,18 +50,45 @@ $( document ).ready(function() {
     '.creditly-wrapper .card-type',
     options);
 
-  // Purchase button's click event
+  // Pagamento Amount Modal
+  // Pagar button click event
   $( "#btn-pagar" ).click(function(e) {
+    var input = parseInt($("#input-pagar").val()); // get user input for payment amount
+    stopIfInputEmpty(input, $(".payment-amount-form button"));
 
-    var input = parseInt($("#input-pagar").val());
-    var cc_form = $("#payment_form");
-    var boleto_form = $("#select-payment-form");
-    var amount_in_cents = input * 0.15 * 100;
-    var amount = (input * 0.15).toFixed(2);
+    var cc_form = $("#payment_form"); // prepar to save the amount to another form
+    var boleto_form = $("#select-payment-form"); // same as above
+    var amount_in_cents = input * 0.15 * 100; // Pagar.me needs amount in cents
+    var amount = (input * 0.15).toFixed(2); // round off the 15%
+
+    // Modals don't respond to preventDefault()
+    // Ugly solution was to remove the submit button's attributes that tell it to open next modal
+    // Refactoring notes: seperate out this function to a helper file
+    function stopIfInputEmpty(input, element){
+      if ( isNaN(input) ) {
+        element.removeAttr("data-dismiss");
+        element.removeAttr("data-toggle");
+        element.removeAttr("data-target");
+        element.attr({
+          type: "button",
+          id: "btn-pagar",
+          class: "btn btn-primary"
+        });
+      } else {
+        element.attr({
+          type: "button",
+          id: "btn-pagar",
+          class: "btn btn-primary",
+          "data-dismiss": "modal",
+          "data-toggle": "modal",
+          "data-target": ".select-payment-modal"
+        });
+      }
+    };
 
     cc_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
     boleto_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
-    $(".modal-title").text("Cartão de Crédito: R$" + amount);
+    $(".credit-card-modal .modal-title").text("Cartão de Crédito: R$" + amount);
 
   });
 
@@ -113,7 +140,7 @@ $( document ).ready(function() {
     }
   });
 
-  
+
   $('#characterLeft').text('1500 caracteres restantes');
     $('#message').keydown(function () {
         var max = 1500;
