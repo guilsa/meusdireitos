@@ -4,6 +4,7 @@ require 'sinatra'
 require 'pagarme'
 require 'trello'
 require 'sendgrid-ruby'
+require 'tilt/erb'
 
 if development? then
   require "sinatra/reloader"
