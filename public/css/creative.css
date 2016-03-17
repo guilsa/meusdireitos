@@ -58,6 +58,9 @@ p {
 section {
   padding: 100px 0;
 }
+#about {
+  padding: 50px;
+}
 aside {
   padding: 50px 0;
 }
@@ -440,4 +443,12 @@ input[type=number]::-webkit-outer-spin-button {
   height: 150px;
   clear:both;
   padding-top:20px;
+}
+.well-custom {
+  background-color: #fcf8e3;
+}
+.alert-warning {
+  opacity: 0.8;
+  text-align: justify;
+  text-justify: inter-word;
 }
