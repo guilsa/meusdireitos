@@ -46,7 +46,7 @@ post '/contact' do
 
   client = SendGrid::Client.new(api_key: SENDGRID_APIKEY)
 
-  res = client.send(SendGrid::Mail.new(to: ['guilsa001@gmail.com', 'bpascowitch@gmail.com'],
+  res = client.send(SendGrid::Mail.new(to: ['vouatras2016@gmail.com'],
                                        from: email,
                                        subject: subject,
                                        text: message))
