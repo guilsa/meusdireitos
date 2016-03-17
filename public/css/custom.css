@@ -444,9 +444,6 @@ input[type=number]::-webkit-outer-spin-button {
   clear:both;
   padding-top:20px;
 }
-.well-custom {
-  background-color: #fcf8e3;
-}
 .alert-warning {
   opacity: 0.8;
   text-align: justify;
