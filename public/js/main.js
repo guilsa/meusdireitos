@@ -54,7 +54,7 @@ $( document ).ready(function() {
   // Pagar button click event
   $( "#btn-pagar" ).click(function(e) {
     var input = parseInt($("#input-pagar").val()); // get user input for payment amount
-    stopIfInputEmpty(input, $(".payment-amount-form button"));
+    stopIfInputInvalid(input, $(".payment-amount-form button"));
 
     var cc_form = $("#payment_form"); // prepar to save the amount to another form
     var boleto_form = $("#select-payment-form"); // same as above
@@ -64,15 +64,15 @@ $( document ).ready(function() {
     // Modals don't respond to preventDefault()
     // Ugly solution was to remove the submit button's attributes that tell it to open next modal
     // Refactoring notes: seperate out this function to a helper file
-    function stopIfInputEmpty(input, element){
-      if ( isNaN(input) ) {
+    function stopIfInputInvalid(input, element){
+      if ( inputInvalid(input) ) {
         element.removeAttr("data-dismiss");
         element.removeAttr("data-toggle");
         element.removeAttr("data-target");
         element.attr({
           type: "button",
           id: "btn-pagar",
-          class: "btn btn-primary"
+          class: "btn btn-primary btn-lg"
         });
       } else {
         element.attr({
@@ -84,6 +84,11 @@ $( document ).ready(function() {
           "data-target": ".select-payment-modal"
         });
       }
+    };
+
+    // Need to refactor this stuff into a helper file for encapsulation/easier reading
+    function inputInvalid(input){
+      return isNaN(input) ? true : false;
     };
 
     cc_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
