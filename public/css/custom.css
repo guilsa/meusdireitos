@@ -452,3 +452,10 @@ input[type=number]::-webkit-outer-spin-button {
 #reclamacao {
   padding: 50px;
 }
+.tos-modal .modal-body{
+  height: 600px;
+  overflow-y: auto;
+}
+.tos-modal .modal-body p {
+  font-size: 15px;
+}
