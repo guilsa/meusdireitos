@@ -96,7 +96,7 @@ $( document ).ready(function() {
 
     cc_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
     boleto_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
-    $(".credit-card-modal .modal-title").text("Cartão de Crédito: R$" + amount);
+    $(".credit-card-modal .modal-title").text("Taxa Vou Atrás: R$" + amount);
 
   });
 
