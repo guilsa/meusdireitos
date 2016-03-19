@@ -1,5 +1,8 @@
 $( document ).ready(function() {
 
+  // As-you-type currency formatting
+  $("#input-pagar").number( true, 2, ",", "." );
+
   var url = window.location.href;
   if ( url.indexOf('?pagamento') != -1 ) {
     $('.payment-amount-modal').modal('show');
@@ -53,7 +56,7 @@ $( document ).ready(function() {
   // Pagamento Amount Modal
   // Pagar button click event
   $( "#btn-pagar" ).click(function(e) {
-    var input = parseInt($("#input-pagar").val()); // get user input for payment amount
+    var input = parseFloat($("#input-pagar").val()); // get user input for payment amount
     stopIfInputInvalid(input, $(".payment-amount-form button"));
 
     var cc_form = $("#payment_form"); // prepar to save the amount to another form
