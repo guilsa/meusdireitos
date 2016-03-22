@@ -57,6 +57,7 @@ $( document ).ready(function() {
   // Pagar button click event
   $( "#btn-pagar" ).click(function(e) {
     var input = parseFloat($("#input-pagar").val()); // get user input for payment amount
+    var brazilianReaisFormatting = accounting.formatMoney(input, "R$", 2, ".", ","); // use accounting.js to reformat
     stopIfInputInvalid(input, $(".payment-amount-form button"));
 
     var cc_form = $("#payment_form"); // prepar to save the amount to another form
@@ -96,7 +97,7 @@ $( document ).ready(function() {
 
     cc_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
     boleto_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
-    $(".credit-card-modal .modal-title").text("Taxa Vou Atrás: R$" + amount);
+    $(".credit-card-modal .modal-title").text("Taxa Vou Atrás: " + brazilianReaisFormatting);
 
   });
 
