@@ -459,3 +459,7 @@ input[type=number]::-webkit-outer-spin-button {
 .tos-modal .modal-body p {
   font-size: 15px;
 }
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
