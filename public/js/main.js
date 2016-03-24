@@ -102,7 +102,7 @@ $( document ).ready(function() {
   });
 
   // Pagar.me form capture via the Creditly helpers
-  PagarMe.encryption_key = "ek_test_1iApOSxO2fc1yi1oIkFJSSZowB5pNu";
+  PagarMe.encryption_key = "ek_live_Soq0KYBZ8D37Sgufeh56KACOR92F4M";
 
   var form = $("#payment_form");
 
