@@ -57,13 +57,13 @@ $( document ).ready(function() {
   // Pagar button click event
   $( "#btn-pagar" ).click(function(e) {
     var input = parseFloat($("#input-pagar").val()); // get user input for payment amount
-    var brazilianReaisFormatting = accounting.formatMoney(input, "R$", 2, ".", ","); // use accounting.js to reformat
     stopIfInputInvalid(input, $(".payment-amount-form button"));
 
     var cc_form = $("#payment_form"); // prepar to save the amount to another form
     var boleto_form = $("#select-payment-form"); // same as above
     var amount_in_cents = input * 0.15 * 100; // Pagar.me needs amount in cents
     var amount = (input * 0.15).toFixed(2); // round off the 15%
+    var brazilianReaisFormatting = accounting.formatMoney(amount, "R$", 2, ".", ","); // use accounting.js to reformat
 
     // Modals don't respond to preventDefault()
     // Ugly solution was to remove the submit button's attributes that tell it to open next modal
