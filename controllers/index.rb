@@ -13,6 +13,11 @@ get '/sucesso' do
   erb :success
 end
 
+get '/successboleto' do
+  @boleto_url = params["url"]
+  erb :success_boleto
+end
+
 get '/erro' do
   @status = params["status"]
   erb :unsuccess
@@ -73,7 +78,7 @@ post '/boletotransactions/new' do
   status = transaction.status
 
   if status == 'waiting_payment' then
-    redirect to("/sucesso?status=#{status}")
+    redirect to("/successboleto?url=#{boleto_url}")
   else
     redirect to("/erro?status=#{status}")
   end
