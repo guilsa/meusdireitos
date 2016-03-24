@@ -8,11 +8,11 @@ $( document ).ready(function() {
     $('.payment-amount-modal').modal('show');
   }
 
-  // Send user to credit card modal OR submit the boleto
-  var credit_card = $("#select-payment-form #option1");
-  var boleto = $("#select-payment-form #option2");
+  // Send user to credit card modal OR modal to confirm the boleto
+  var credit_card = $(".select-payment-modal #option1");
+  var boleto = $(".select-payment-modal #option2");
   credit_card.click(function(){
-    $("#select-payment-form button").attr({
+    $(".select-payment-modal button").attr({
       type: "button",
       class: "btn btn-primary",
       "data-dismiss": "modal",
@@ -21,12 +21,12 @@ $( document ).ready(function() {
     });
   });
   boleto.click(function(){
-    $("#select-payment-form button").removeAttr("data-dismiss");
-    $("#select-payment-form button").removeAttr("data-toggle");
-    $("#select-payment-form button").removeAttr("data-target");
-    $("#select-payment-form button").attr({
-      type: "submit",
-      class: "btn btn-primary"
+    // $("#select-payment-form button").removeAttr("data-dismiss");
+    // $("#select-payment-form button").removeAttr("data-toggle");
+    // $("#select-payment-form button").removeAttr("data-target");
+    $(".select-payment-modal button").attr({
+      class: "btn btn-primary",
+      "data-target": ".boleto-confirm-modal"
     });
   });
 
@@ -98,6 +98,7 @@ $( document ).ready(function() {
     cc_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
     boleto_form.append($('<input type="hidden" name="amount">').val(amount_in_cents));
     $(".credit-card-modal .modal-title").text("Taxa Vou Atrás: " + brazilianReaisFormatting);
+    $(".boleto-confirm-modal .modal-title").text("Taxa Vou Atrás: " + brazilianReaisFormatting);
 
   });
 

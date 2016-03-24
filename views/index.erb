@@ -482,19 +482,16 @@
         <div class="modal-content">
           <h3>Forma de pagamento</h3>
           <p>
-          <form id="select-payment-form" action="/boletotransactions/new" method="POST">
-            <!-- <form id="payment_form" action="/transactions/new" method="POST"> -->
-            <div class="btn-group" data-toggle="buttons">
-              <label>
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> Cartão de crédito
-              </label>
-              <label>
-                <input type="radio" name="options" id="option2" autocomplete="off"> Boleto
-              </label>
-            </div>
-            <br/>
-            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".credit-card-modal">Próximo</button>
-          </form>
+          <div class="btn-group" data-toggle="buttons">
+            <label>
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> Cartão de crédito
+            </label>
+            <label>
+              <input type="radio" name="options" id="option2" autocomplete="off"> Boleto
+            </label>
+          </div>
+          <br/>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".credit-card-modal">Próximo</button>
           </p>
         </div>
       </div>
@@ -534,6 +531,28 @@
               <input type="submit" class="btn btn-primary" value="Finalizar Pagamento">
             </form>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Boleto confirm modal -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="modal fade boleto-confirm-modal text-center" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <h3 class="modal-title">Taxa Vou Atrás: R$</h3>
+            <div class="modal-body">
+              <h4>
+                Confirmo que o valor está correto (15% do valor da reclamação).
+              </h4>
+              <br />
+              <form id="select-payment-form" action="/boletotransactions/new" method="POST">
+                <input type="submit" class="btn btn-primary" value="Gerar Boleto">
+                <button type="submit" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target=".payment-amount-modal">Voltar</button>
+              </form>
+              <br />
+            </div>
         </div>
       </div>
     </div>
